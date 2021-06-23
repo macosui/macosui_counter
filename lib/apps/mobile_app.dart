@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:macosui_counter/ui/counter_shell.dart';
 
+/// A root widget appropriate for Android/iOS
 class MobileApp extends StatelessWidget {
   const MobileApp({Key? key}) : super(key: key);
 
