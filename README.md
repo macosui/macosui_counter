@@ -9,4 +9,4 @@ of macos_ui and is useful for those looking to start out with macos_ui.
 
 ## How to build this application
 1. Fork or clone this repository
-2. Run on the platform of your choice
+2. Run on the platform of your choice (note: Windows and Linux have not been tested)
