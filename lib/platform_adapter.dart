@@ -16,7 +16,7 @@ class PlatformAdapter extends StatelessWidget {
         Provider<CounterBloc>.value(value: counterBloc),
       ],
       builder: (context, child) {
-        if (UniversalPlatform.isDesktopOrWeb) {
+        if (UniversalPlatform.isDesktop || UniversalPlatform.isWeb) {
           return MacApp();
         } else {
           return MobileApp();

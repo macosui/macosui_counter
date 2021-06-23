@@ -6,7 +6,7 @@ import 'package:universal_platform/universal_platform.dart';
 class CounterShell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    if (UniversalPlatform.isDesktopOrWeb) {
+    if (UniversalPlatform.isDesktop || UniversalPlatform.isWeb) {
       return DesktopCounter();
     } else {
       return MobileCounter();

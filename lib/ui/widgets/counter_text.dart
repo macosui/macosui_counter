@@ -9,7 +9,7 @@ class CounterText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (UniversalPlatform.isDesktopOrWeb) {
+    if (UniversalPlatform.isDesktop || UniversalPlatform.isWeb) {
       return Text(
         '$count',
         style: MacosTheme.of(context).typography.largeTitle,
