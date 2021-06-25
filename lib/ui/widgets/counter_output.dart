@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:macosui_counter/state/counter_bloc.dart';
+import 'package:macosui_counter/bloc/counter_bloc.dart';
 import 'package:macosui_counter/ui/widgets/counter_text.dart';
 import 'package:provider/provider.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
-import 'package:macosui_counter/state/counter_bloc.dart';
+import 'package:macosui_counter/bloc/counter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class DesktopCounterButtons extends StatelessWidget {

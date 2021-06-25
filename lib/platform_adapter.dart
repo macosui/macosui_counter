@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:macosui_counter/apps/mac_app.dart';
 import 'package:macosui_counter/apps/mobile_app.dart';
-import 'package:macosui_counter/state/counter_bloc.dart';
+import 'package:macosui_counter/bloc/counter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_platform/universal_platform.dart';
 
