@@ -3,6 +3,6 @@ import 'package:macosui_counter/platform_adapter.dart';
 
 void main() {
   runApp(
-    PlatformAdapter(),
+    PlatformDelegate(),
   );
 }

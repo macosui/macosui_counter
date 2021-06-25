@@ -10,7 +10,15 @@ class MobileCounter extends StatelessWidget {
         title: const Text('Counter'),
       ),
       body: Center(
-        child: CounterOutput(),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'You have pushed the button this many times:',
+            ),
+            CounterOutput(),
+          ],
+        ),
       ),
       floatingActionButton: MobileCounterButtons(),
     );

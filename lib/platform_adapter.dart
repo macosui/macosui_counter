@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 /// Determines which "app" should be the root widget based on the current Platform.
-class PlatformAdapter extends StatelessWidget {
+class PlatformDelegate extends StatelessWidget {
   final counterBloc = CounterBloc();
 
   @override
