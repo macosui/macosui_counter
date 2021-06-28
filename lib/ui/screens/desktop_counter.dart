@@ -18,6 +18,7 @@ class _DesktopCounterState extends State<DesktopCounter> {
       sidebar: Sidebar(
         minWidth: 200,
         builder: (context, scrollController) => SidebarItems(
+          selectedColor: MacosColors.unemphasizedSelectedContentBackgroundColor,
           currentIndex: currentIndex,
           onChanged: (value) {
             setState(() => currentIndex = value);
