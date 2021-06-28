@@ -1,6 +1,6 @@
 {
-    "name": "untitled",
-    "short_name": "untitled",
+    "name": "macosui_counter",
+    "short_name": "macosui_counter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

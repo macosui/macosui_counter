@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.grovinchip.untitled">
+    package="dev.grovinchip.macosui_counter">
    <application
-        android:label="untitled"
+        android:label="macosui_counter"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

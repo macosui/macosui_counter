@@ -34,7 +34,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "dev.grovinchip.untitled"
+        applicationId "dev.grovinchip.macosui_counter"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
