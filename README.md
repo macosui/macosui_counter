@@ -10,9 +10,9 @@ A cross-platform counter app made to demonstrate the macos_ui package.
 
 <img src="https://imgur.com/5YiRTvW.jpg" width="75%"/>
 
-<img src="https://imgur.com/QKINyRT.jpg" width="75%"/>
+<img src="https://imgur.com/QKINyRT.jpg" width="25%"/>
 
-<img src="https://imgur.com/9bQkGkP.jpg" width="75%"/>
+<img src="https://imgur.com/9bQkGkP.jpg" width="25%"/>
 
 ## About this application
 
