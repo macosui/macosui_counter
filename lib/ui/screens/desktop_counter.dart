@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 import 'package:macosui_counter/bloc/counter_bloc.dart';
@@ -13,7 +14,7 @@ class _DesktopCounterState extends State<DesktopCounter> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return MacosScaffold(
+    return MacosWindow(
       sidebar: Sidebar(
         minWidth: 200,
         builder: (context, scrollController) => SidebarItems(
@@ -32,19 +33,21 @@ class _DesktopCounterState extends State<DesktopCounter> {
           ],
         ),
       ),
-      children: [
-        ContentArea(
-          builder: (context, scrollController) {
-            return IndexedStack(
-              index: currentIndex,
-              children: [
-                _Incrementer(),
-                _Decrementer(),
-              ],
-            );
-          },
-        ),
-      ],
+      child: MacosScaffold(
+        children: [
+          ContentArea(
+            builder: (context, scrollController) {
+              return IndexedStack(
+                index: currentIndex,
+                children: [
+                  _Incrementer(),
+                  _Decrementer(),
+                ],
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
