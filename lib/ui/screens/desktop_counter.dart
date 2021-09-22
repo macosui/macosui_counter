@@ -33,30 +33,34 @@ class _DesktopCounterState extends State<DesktopCounter> {
           ],
         ),
       ),
-      child: MacosScaffold(
-        titleBar: TitleBar(
-          title: Text('Counter'),
-          actions: [
-            MacosIconButton(
-              icon: Icon(CupertinoIcons.sidebar_left),
-              backgroundColor: Colors.transparent,
-              onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
+      child: Builder(
+        builder: (context) {
+          return MacosScaffold(
+            titleBar: TitleBar(
+              title: Text('Counter'),
+              actions: [
+                MacosIconButton(
+                  icon: Icon(CupertinoIcons.sidebar_left),
+                  backgroundColor: Colors.transparent,
+                  onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
+                ),
+              ],
             ),
-          ],
-        ),
-        children: [
-          ContentArea(
-            builder: (context, scrollController) {
-              return IndexedStack(
-                index: currentIndex,
-                children: [
-                  _Incrementer(),
-                  _Decrementer(),
-                ],
-              );
-            },
-          ),
-        ],
+            children: [
+              ContentArea(
+                builder: (context, scrollController) {
+                  return IndexedStack(
+                    index: currentIndex,
+                    children: [
+                      _Incrementer(),
+                      _Decrementer(),
+                    ],
+                  );
+                },
+              ),
+            ],
+          );
+        },
       ),
     );
   }
