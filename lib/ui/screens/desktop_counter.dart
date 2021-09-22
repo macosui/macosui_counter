@@ -34,6 +34,9 @@ class _DesktopCounterState extends State<DesktopCounter> {
         ),
       ),
       child: MacosScaffold(
+        titleBar: TitleBar(
+          title: Text('Counter'),
+        ),
         children: [
           ContentArea(
             builder: (context, scrollController) {
