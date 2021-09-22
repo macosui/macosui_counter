@@ -13,7 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.3
   provider: ^6.0.0
   macos_ui: ^0.7.0+1
-  rxdart: ^0.27.1
+  rxdart: ^0.27.2
   universal_platform: ^1.0.0+1
 
 dev_dependencies:
