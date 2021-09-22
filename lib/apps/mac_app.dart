@@ -9,6 +9,7 @@ class MacApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MacosApp(
+      debugShowCheckedModeBanner: false,
       home: CounterShell(),
     );
   }

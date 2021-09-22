@@ -36,6 +36,13 @@ class _DesktopCounterState extends State<DesktopCounter> {
       child: MacosScaffold(
         titleBar: TitleBar(
           title: Text('Counter'),
+          actions: [
+            MacosIconButton(
+              icon: Icon(CupertinoIcons.sidebar_left),
+              backgroundColor: Colors.transparent,
+              onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
+            ),
+          ],
         ),
         children: [
           ContentArea(
