@@ -25,19 +25,58 @@ class _DesktopCounterState extends State<DesktopCounter> {
           },
           items: [
             SidebarItem(
-              label: Text('Increment'),
+              label: const Text('Increment'),
             ),
             SidebarItem(
-              label: Text('Decrement'),
+              label: const Text('Decrement'),
             ),
           ],
+        ),
+        bottom: GestureDetector(
+          onTap: () => showMacosAlertDialog(
+            context: context,
+            builder: (_) => MacosAlertDialog(
+              appIcon: FlutterLogo(size: 75),
+              title: const Text('macosui_counter'),
+              message: const Text(
+                  'This is a sample application meant to demonstrate how to '
+                  'architect a native-looking multi-platform Flutter application.'),
+              primaryButton: PushButton(
+                buttonSize: ButtonSize.large,
+                child: Text('Dismiss'),
+                onPressed: () => Navigator.of(context).pop(),
+              ),
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    CupertinoIcons.info,
+                    color: MacosTheme.brightnessOf(context).isDark
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+                  const SizedBox(width: 8),
+                  Text(
+                    'Info',
+                    style: MacosTheme.of(context).typography.title2,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
       ),
       child: Builder(
         builder: (context) {
           return MacosScaffold(
             titleBar: TitleBar(
-              title: Text('Counter'),
+              title: const Text('Counter'),
               actions: [
                 MacosIconButton(
                   icon: Icon(CupertinoIcons.sidebar_left),
@@ -75,14 +114,14 @@ class _Incrementer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'You have pushed the button this many times:',
           ),
           const SizedBox(height: 8.0),
           CounterOutput(),
           const SizedBox(height: 16.0),
           PushButton(
-            child: Text('Increment'),
+            child: const Text('Increment'),
             buttonSize: ButtonSize.large,
             onPressed: () =>
                 Provider.of<CounterBloc>(context, listen: false).increment(),
@@ -102,14 +141,14 @@ class _Decrementer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
+          const Text(
             'You have pushed the button this many times:',
           ),
           const SizedBox(height: 8.0),
           CounterOutput(),
           const SizedBox(height: 16.0),
           PushButton(
-            child: Text('Decrement'),
+            child: const Text('Decrement'),
             buttonSize: ButtonSize.large,
             onPressed: () =>
                 Provider.of<CounterBloc>(context, listen: false).decrement(),
