@@ -79,7 +79,10 @@ class _DesktopCounterState extends State<DesktopCounter> {
               title: const Text('Counter'),
               actions: [
                 MacosIconButton(
-                  icon: Icon(CupertinoIcons.sidebar_left),
+                  icon: Icon(
+                    CupertinoIcons.sidebar_left,
+                    color: MacosColors.systemGrayColor,
+                  ),
                   backgroundColor: Colors.transparent,
                   onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
                 ),
