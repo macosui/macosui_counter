@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 import 'package:macosui_counter/bloc/counter_bloc.dart';
+import 'package:macosui_counter/ui/screens/desktop_settings.dart';
 import 'package:macosui_counter/ui/widgets/counter_output.dart';
 import 'package:provider/provider.dart';
 
@@ -18,7 +19,9 @@ class _DesktopCounterState extends State<DesktopCounter> {
       sidebar: Sidebar(
         minWidth: 200,
         builder: (context, scrollController) => SidebarItems(
-          selectedColor: MacosColors.unemphasizedSelectedContentBackgroundColor,
+          selectedColor: MacosTheme.brightnessOf(context).isDark
+              ? MacosColors.unemphasizedSelectedContentBackgroundColor
+              : MacosColors.systemGrayColor,
           currentIndex: currentIndex,
           onChanged: (value) {
             setState(() => currentIndex = value);
@@ -76,15 +79,29 @@ class _DesktopCounterState extends State<DesktopCounter> {
         builder: (context) {
           return MacosScaffold(
             titleBar: TitleBar(
+              leading: MacosIconButton(
+                icon: Icon(
+                  CupertinoIcons.sidebar_left,
+                  color: MacosColors.systemGrayColor,
+                ),
+                backgroundColor: Colors.transparent,
+                onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
+              ),
               title: const Text('Counter'),
               actions: [
                 MacosIconButton(
                   icon: Icon(
-                    CupertinoIcons.sidebar_left,
+                    CupertinoIcons.settings,
                     color: MacosColors.systemGrayColor,
                   ),
                   backgroundColor: Colors.transparent,
-                  onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
+                  onPressed: () => showMacosAlertDialog(
+                    context: context,
+                    builder: (_) => Padding(
+                      padding: const EdgeInsets.all(36.0),
+                      child: DesktopSettings(),
+                    ),
+                  ),
                 ),
               ],
             ),

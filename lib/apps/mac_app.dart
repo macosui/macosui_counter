@@ -1,6 +1,8 @@
 import 'package:macos_ui/macos_ui.dart';
 import 'package:flutter/widgets.dart';
+import 'package:macosui_counter/bloc/settings_bloc.dart';
 import 'package:macosui_counter/ui/counter_shell.dart';
+import 'package:provider/provider.dart';
 
 /// A root widget appropriate for macOS/desktop
 class MacApp extends StatelessWidget {
@@ -8,9 +10,16 @@ class MacApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MacosApp(
-      debugShowCheckedModeBanner: false,
-      home: CounterShell(),
+    return StreamBuilder<Settings>(
+      stream: Provider.of<SettingsBloc>(context).preferencesSubject,
+      initialData: Provider.of<SettingsBloc>(context).preferencesSubject.value,
+      builder: (context, snapshot) {
+        return MacosApp(
+          debugShowCheckedModeBanner: false,
+          themeMode: snapshot.data!.themeMode,
+          home: CounterShell(),
+        );
+      }
     );
   }
 }
