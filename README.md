@@ -2,13 +2,13 @@
 
 A cross-platform counter app made to demonstrate the macos_ui package.
 
-<img src="https://imgur.com/8uuW3S4.jpg" width="75%"/>
+<img src="https://imgur.com/RhInhlU.jpg" width="75%"/>
 
-<img src="https://imgur.com/srs1NNg.jpg" width="75%"/>
+<img src="https://imgur.com/uKU6PV8.jpg" width="75%"/>
 
-<img src="https://imgur.com/aU5x3d3.jpg" width="75%"/>
+<img src="https://imgur.com/NKknAoR.jpg" width="75%"/>
 
-<img src="https://imgur.com/5YiRTvW.jpg" width="75%"/>
+<img src="https://imgur.com/GuJgp4K.jpg" width="75%"/>
 
 <img src="https://imgur.com/QKINyRT.jpg" width="25%"/>
 
