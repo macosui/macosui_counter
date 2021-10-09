@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 import 'package:macosui_counter/bloc/counter_bloc.dart';
 import 'package:macosui_counter/ui/widgets/counter_output.dart';
+import 'package:macosui_counter/ui/widgets/info_text.dart';
 import 'package:provider/provider.dart';
 
 class DesktopCounter extends StatefulWidget {
@@ -38,9 +39,7 @@ class _DesktopCounterState extends State<DesktopCounter> {
             builder: (_) => MacosAlertDialog(
               appIcon: FlutterLogo(size: 75),
               title: const Text('macosui_counter'),
-              message: const Text(
-                  'This is a sample application meant to demonstrate how to '
-                  'architect a native-looking multi-platform Flutter application.'),
+              message: const InfoText(),
               primaryButton: PushButton(
                 buttonSize: ButtonSize.large,
                 child: Text('Dismiss'),
