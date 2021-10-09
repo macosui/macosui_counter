@@ -5,7 +5,8 @@ import 'package:macosui_counter/bloc/counter_bloc.dart';
 import 'package:provider/provider.dart';
 import 'package:universal_platform/universal_platform.dart';
 
-/// Determines which "app" should be the root widget based on the current Platform.
+/// Determines which "app" should be the root widget based on the current
+/// Platform.
 class PlatformDelegate extends StatelessWidget {
   final counterBloc = CounterBloc();
 

@@ -9,11 +9,14 @@ class MobileApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'macos_ui Counter Demo',
-      theme: ThemeData(
+      darkTheme: ThemeData(
         brightness: Brightness.dark,
-        primaryColor: Colors.blue,
-        accentColor: Colors.blueAccent,
+        primaryColor: Colors.indigo,
+        colorScheme: ColorScheme.dark().copyWith(
+          secondary: Colors.indigoAccent,
+        ),
       ),
+      themeMode: ThemeMode.dark,
       home: CounterShell(),
     );
   }

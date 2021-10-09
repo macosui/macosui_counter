@@ -13,8 +13,10 @@ class MobileCounter extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+            Text(
               'You have pushed the button this many times:',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.headline6,
             ),
             CounterOutput(),
           ],
