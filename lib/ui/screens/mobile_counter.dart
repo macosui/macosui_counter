@@ -18,6 +18,7 @@ class MobileCounter extends StatelessWidget {
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline6,
             ),
+            const SizedBox(height: 8),
             CounterOutput(),
           ],
         ),

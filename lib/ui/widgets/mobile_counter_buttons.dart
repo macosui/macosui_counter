@@ -10,13 +10,19 @@ class MobileCounterButtons extends StatelessWidget {
       children: [
         FloatingActionButton(
           mini: true,
-          child: Icon(Icons.add),
+          child: Icon(
+            Icons.add,
+            color: Theme.of(context).iconTheme.color,
+          ),
           onPressed: () =>
               Provider.of<CounterBloc>(context, listen: false).increment(),
         ),
         FloatingActionButton(
           mini: true,
-          child: Icon(Icons.remove),
+          child: Icon(
+            Icons.remove,
+            color: Theme.of(context).iconTheme.color,
+          ),
           onPressed: () =>
               Provider.of<CounterBloc>(context, listen: false).decrement(),
         ),
