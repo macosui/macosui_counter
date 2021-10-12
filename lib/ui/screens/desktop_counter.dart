@@ -37,7 +37,7 @@ class _DesktopCounterState extends State<DesktopCounter> {
           onTap: () => showMacosAlertDialog(
             context: context,
             builder: (_) => MacosAlertDialog(
-              appIcon: FlutterLogo(size: 75),
+              appIcon: FlutterLogo(size: 56),
               title: const Text('macosui_counter'),
               message: const InfoText(),
               primaryButton: PushButton(
