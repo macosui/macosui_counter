@@ -18,6 +18,7 @@ class MobileApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.dark,
       home: CounterShell(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
