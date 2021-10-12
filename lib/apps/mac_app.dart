@@ -1,6 +1,6 @@
-import 'package:macos_ui/macos_ui.dart';
 import 'package:flutter/widgets.dart';
-import 'package:macosui_counter/ui/counter_shell.dart';
+import 'package:macos_ui/macos_ui.dart';
+import 'package:macosui_counter/ui/screens/desktop_counter.dart';
 
 /// A root widget appropriate for macOS/desktop
 class MacApp extends StatelessWidget {
@@ -10,7 +10,9 @@ class MacApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MacosApp(
       debugShowCheckedModeBanner: false,
-      home: CounterShell(),
+      theme: MacosThemeData.light(),
+      darkTheme: MacosThemeData.dark(),
+      home: DesktopCounter(),
     );
   }
 }

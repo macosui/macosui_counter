@@ -3,13 +3,17 @@ import 'package:macos_ui/macos_ui.dart';
 import 'package:universal_platform/universal_platform.dart';
 
 class CounterText extends StatelessWidget {
-  const CounterText({Key? key, required this.count}) : super(key: key);
+  const CounterText({
+    Key? key,
+    required this.count,
+  }) : super(key: key);
 
   final int count;
 
   @override
   Widget build(BuildContext context) {
-    if (UniversalPlatform.isDesktop || UniversalPlatform.isWeb) {
+    // TODO: other platform implementations
+    if (UniversalPlatform.isDesktop) {
       return Text(
         '$count',
         style: MacosTheme.of(context).typography.largeTitle,

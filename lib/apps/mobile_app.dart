@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:macosui_counter/ui/counter_shell.dart';
+import 'package:macosui_counter/ui/screens/mobile_counter.dart';
 
 /// A root widget appropriate for Android/iOS
 class MobileApp extends StatelessWidget {
@@ -17,7 +17,7 @@ class MobileApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.dark,
-      home: CounterShell(),
+      home: MobileCounter(),
       debugShowCheckedModeBanner: false,
     );
   }

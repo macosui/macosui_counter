@@ -17,8 +17,9 @@ class PlatformDelegate extends StatelessWidget {
         Provider<CounterBloc>.value(value: counterBloc),
       ],
       builder: (context, child) {
-        if (UniversalPlatform.isDesktop || UniversalPlatform.isWeb) {
+        if (UniversalPlatform.isDesktop) {
           return MacApp();
+        // TODO: Other platform implementations
         } else {
           return MobileApp();
         }
