@@ -51,21 +51,17 @@ class _DesktopCounterState extends State<DesktopCounter> {
             padding: const EdgeInsets.all(8.0),
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Icon(
-                    CupertinoIcons.info,
-                    color: MacosTheme.brightnessOf(context).isDark
-                        ? Colors.white
-                        : Colors.black,
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    'Info',
-                    style: MacosTheme.of(context).typography.title2,
-                  ),
-                ],
+              child: MacosListTile(
+                leading: Icon(
+                  CupertinoIcons.info,
+                  color: MacosTheme.brightnessOf(context).isDark
+                      ? Colors.white
+                      : Colors.black,
+                ),
+                title: Text(
+                  'Info',
+                  style: MacosTheme.of(context).typography.title2,
+                ),
               ),
             ),
           ),
