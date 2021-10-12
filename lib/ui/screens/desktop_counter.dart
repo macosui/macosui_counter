@@ -26,10 +26,16 @@ class _DesktopCounterState extends State<DesktopCounter> {
           },
           items: [
             SidebarItem(
-              label: const Text('Increment'),
+              label: const MacosListTile(
+                leading: Icon(CupertinoIcons.add_circled),
+                title: Text('Increment'),
+              ),
             ),
             SidebarItem(
-              label: const Text('Decrement'),
+              label: const MacosListTile(
+                leading: Icon(CupertinoIcons.minus_circle),
+                title: Text('Decrement'),
+              ),
             ),
           ],
         ),
