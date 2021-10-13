@@ -39,36 +39,31 @@ class _DesktopCounterState extends State<DesktopCounter> {
             ),
           ],
         ),
-        bottom: GestureDetector(
-          onTap: () => showMacosAlertDialog(
-            context: context,
-            builder: (_) => MacosAlertDialog(
-              appIcon: FlutterLogo(size: 56),
-              title: const Text('macosui_counter'),
-              message: const InfoText(),
-              primaryButton: PushButton(
-                buttonSize: ButtonSize.large,
-                child: Text('Dismiss'),
-                onPressed: () => Navigator.of(context).pop(),
+        bottom: Padding(
+          padding: const EdgeInsets.all(8),
+          child: MacosListTile(
+            onClick: () => showMacosAlertDialog(
+              context: context,
+              builder: (_) => MacosAlertDialog(
+                appIcon: FlutterLogo(size: 56),
+                title: const Text('macosui_counter'),
+                message: const InfoText(),
+                primaryButton: PushButton(
+                  buttonSize: ButtonSize.large,
+                  child: Text('Dismiss'),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
               ),
             ),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: MouseRegion(
-              cursor: SystemMouseCursors.click,
-              child: MacosListTile(
-                leading: Icon(
-                  CupertinoIcons.info,
-                  color: MacosTheme.brightnessOf(context).isDark
-                      ? Colors.white
-                      : Colors.black,
-                ),
-                title: Text(
-                  'Info',
-                  style: MacosTheme.of(context).typography.title2,
-                ),
-              ),
+            leading: Icon(
+              CupertinoIcons.info,
+              color: MacosTheme.brightnessOf(context).isDark
+                  ? Colors.white
+                  : Colors.black,
+            ),
+            title: Text(
+              'Info',
+              style: MacosTheme.of(context).typography.title2,
             ),
           ),
         ),
