@@ -1,6 +1,6 @@
 # macosui_counter
 
-A cross-platform counter app made to demonstrate the macos_ui package.
+A cross-platform counter app made to demonstrate the macos_ui package and building native UI for multiple platforms.
 
 <img src="https://imgur.com/RhInhlU.jpg" width="75%"/>
 
