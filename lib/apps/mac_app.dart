@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:macos_ui/macos_ui.dart';
-import 'package:macosui_counter/ui/screens/desktop_counter.dart';
+import 'package:macosui_counter/ui/screens/macos_counter.dart';
 
 /// A root widget appropriate for macOS/desktop
 class MacApp extends StatelessWidget {
@@ -14,7 +14,7 @@ class MacApp extends StatelessWidget {
       theme: MacosThemeData.light(),
       darkTheme: MacosThemeData.dark(),
       themeMode: ThemeMode.system,
-      home: DesktopCounter(),
+      home: MacosCounter(),
     );
   }
 }

@@ -6,12 +6,12 @@ import 'package:macosui_counter/ui/widgets/counter_output.dart';
 import 'package:macosui_counter/ui/widgets/info_text.dart';
 import 'package:provider/provider.dart';
 
-class DesktopCounter extends StatefulWidget {
+class MacosCounter extends StatefulWidget {
   @override
-  _DesktopCounterState createState() => _DesktopCounterState();
+  _MacosCounterState createState() => _MacosCounterState();
 }
 
-class _DesktopCounterState extends State<DesktopCounter> {
+class _MacosCounterState extends State<MacosCounter> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
