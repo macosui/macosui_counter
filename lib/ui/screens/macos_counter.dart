@@ -71,18 +71,16 @@ class _MacosCounterState extends State<MacosCounter> {
       child: Builder(
         builder: (context) {
           return MacosScaffold(
-            titleBar: TitleBar(
-              title: const Text('Counter'),
-              actions: [
-                MacosIconButton(
-                  icon: Icon(
-                    CupertinoIcons.sidebar_left,
-                    color: MacosColors.systemGrayColor,
-                  ),
-                  backgroundColor: Colors.transparent,
-                  onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
+            toolBar: ToolBar(
+              leading: MacosIconButton(
+                icon: Icon(
+                  CupertinoIcons.sidebar_left,
+                  color: MacosColors.systemGrayColor,
                 ),
-              ],
+                backgroundColor: Colors.transparent,
+                onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
+              ),
+              title: const Text('macosui_counter'),
             ),
             children: [
               ContentArea(
