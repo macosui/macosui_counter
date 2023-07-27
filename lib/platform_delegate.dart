@@ -10,6 +10,8 @@ import 'package:universal_platform/universal_platform.dart';
 class PlatformDelegate extends StatelessWidget {
   final counterBloc = CounterBloc();
 
+  PlatformDelegate({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -18,10 +20,10 @@ class PlatformDelegate extends StatelessWidget {
       ],
       builder: (context, child) {
         if (UniversalPlatform.isDesktop) {
-          return MacApp();
+          return const MacApp();
         // TODO: Other platform implementations
         } else {
-          return MobileApp();
+          return const MobileApp();
         }
       },
     );

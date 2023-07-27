@@ -4,10 +4,10 @@ import 'package:macosui_counter/ui/widgets/counter_output.dart';
 import 'package:provider/provider.dart';
 
 class WindowsCounter extends StatefulWidget {
-  const WindowsCounter({Key? key}) : super(key: key);
+  const WindowsCounter({super.key});
 
   @override
-  _WindowsCounterState createState() => _WindowsCounterState();
+  State<WindowsCounter> createState() => _WindowsCounterState();
 }
 
 class _WindowsCounterState extends State<WindowsCounter> {
@@ -23,28 +23,28 @@ class _WindowsCounterState extends State<WindowsCounter> {
         },
         items: [
           PaneItem(
-            icon: Icon(FluentIcons.add),
-            title: const Text('Increment'),
+            icon: const Icon(FluentIcons.add),
+            body: const Text('Increment'),
           ),
           PaneItem(
-            icon: Icon(FluentIcons.remove),
-            title: const Text('Decrement'),
+            icon: const Icon(FluentIcons.remove),
+            body: const Text('Decrement'),
           ),
         ],
       ),
-      content: NavigationBody(
-        index: currentIndex,
-        children: [
-          _Incrementer(),
-          _Decrementer(),
-        ],
+      content: ScaffoldPage(
+        // index: currentIndex,
+        content: [
+          const _Incrementer(),
+          const _Decrementer(),
+        ][currentIndex],
       ),
     );
   }
 }
 
 class _Incrementer extends StatelessWidget {
-  const _Incrementer({Key? key}) : super(key: key);
+  const _Incrementer();
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _Incrementer extends StatelessWidget {
             'You have pushed the button this many times:',
             style: FluentTheme.of(context).typography.title,
           ),
-          CounterOutput(),
+          const CounterOutput(),
           const SizedBox(height: 8),
           FilledButton(
             child: const Text('Increment'),
@@ -72,7 +72,7 @@ class _Incrementer extends StatelessWidget {
 }
 
 class _Decrementer extends StatelessWidget {
-  const _Decrementer({Key? key}) : super(key: key);
+  const _Decrementer();
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class _Decrementer extends StatelessWidget {
             'You have pushed the button this many times:',
             style: FluentTheme.of(context).typography.title,
           ),
-          CounterOutput(),
+          const CounterOutput(),
           const SizedBox(height: 8),
           FilledButton(
             child: const Text('Decrement'),

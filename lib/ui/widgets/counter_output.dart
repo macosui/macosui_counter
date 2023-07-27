@@ -4,6 +4,8 @@ import 'package:macosui_counter/ui/widgets/counter_text.dart';
 import 'package:provider/provider.dart';
 
 class CounterOutput extends StatelessWidget {
+  const CounterOutput({super.key});
+
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<int>(

@@ -3,6 +3,8 @@ import 'package:macosui_counter/bloc/counter_bloc.dart';
 import 'package:provider/provider.dart';
 
 class MobileCounterButtons extends StatelessWidget {
+  const MobileCounterButtons({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Column(

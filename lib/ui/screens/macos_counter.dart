@@ -7,8 +7,10 @@ import 'package:macosui_counter/ui/widgets/info_text.dart';
 import 'package:provider/provider.dart';
 
 class MacosCounter extends StatefulWidget {
+  const MacosCounter({super.key});
+
   @override
-  _MacosCounterState createState() => _MacosCounterState();
+  State<MacosCounter> createState() => _MacosCounterState();
 }
 
 class _MacosCounterState extends State<MacosCounter> {
@@ -19,52 +21,45 @@ class _MacosCounterState extends State<MacosCounter> {
       sidebar: Sidebar(
         minWidth: 200,
         builder: (context, scrollController) => SidebarItems(
-          selectedColor: MacosColors.unemphasizedSelectedContentBackgroundColor,
           currentIndex: currentIndex,
-          onChanged: (value) {
-            setState(() => currentIndex = value);
-          },
-          items: [
+          itemSize: SidebarItemSize.large,
+          onChanged: (value) => setState(() {
+            currentIndex = value;
+          }),
+          items: const [
             SidebarItem(
-              label: const MacosListTile(
-                leading: Icon(CupertinoIcons.add_circled),
-                title: Text('Increment'),
-              ),
+              leading: MacosIcon(CupertinoIcons.add_circled),
+              label: Text('Increment'),
             ),
             SidebarItem(
-              label: const MacosListTile(
-                leading: Icon(CupertinoIcons.minus_circle),
-                title: Text('Decrement'),
-              ),
+              leading: MacosIcon(CupertinoIcons.minus_circle),
+              label: Text('Decrement'),
             ),
           ],
         ),
-        bottom: Padding(
-          padding: const EdgeInsets.all(8),
-          child: MacosListTile(
-            onClick: () => showMacosAlertDialog(
-              context: context,
-              builder: (_) => MacosAlertDialog(
-                appIcon: FlutterLogo(size: 56),
-                title: const Text('macosui_counter'),
-                message: const InfoText(),
-                primaryButton: PushButton(
-                  buttonSize: ButtonSize.large,
-                  child: Text('Dismiss'),
-                  onPressed: () => Navigator.of(context).pop(),
-                ),
+        bottom: MacosListTile(
+          onClick: () => showMacosAlertDialog(
+            context: context,
+            builder: (_) => MacosAlertDialog(
+              appIcon: const FlutterLogo(size: 64),
+              title: const Text('macosui_counter'),
+              message: const InfoText(),
+              primaryButton: PushButton(
+                controlSize: ControlSize.large,
+                child: const Text('Dismiss'),
+                onPressed: () => Navigator.of(context).pop(),
               ),
             ),
-            leading: Icon(
-              CupertinoIcons.info,
-              color: MacosTheme.brightnessOf(context).isDark
-                  ? Colors.white
-                  : Colors.black,
-            ),
-            title: Text(
-              'Info',
-              style: MacosTheme.of(context).typography.title2,
-            ),
+          ),
+          leading: MacosIcon(
+            CupertinoIcons.info,
+            color: MacosTheme.brightnessOf(context).isDark
+                ? Colors.white
+                : Colors.black,
+          ),
+          title: Text(
+            'Info',
+            style: MacosTheme.of(context).typography.title2,
           ),
         ),
       ),
@@ -72,13 +67,26 @@ class _MacosCounterState extends State<MacosCounter> {
         builder: (context) {
           return MacosScaffold(
             toolBar: ToolBar(
-              leading: MacosIconButton(
-                icon: Icon(
-                  CupertinoIcons.sidebar_left,
-                  color: MacosColors.systemGrayColor,
+              leading: MacosTooltip(
+                message: 'Toggle Sidebar',
+                useMousePosition: false,
+                child: MacosIconButton(
+                  icon: MacosIcon(
+                    CupertinoIcons.sidebar_left,
+                    color: MacosTheme.brightnessOf(context).resolve(
+                      const Color.fromRGBO(0, 0, 0, 0.5),
+                      const Color.fromRGBO(255, 255, 255, 0.5),
+                    ),
+                    size: 20.0,
+                  ),
+                  boxConstraints: const BoxConstraints(
+                    minHeight: 20,
+                    minWidth: 20,
+                    maxWidth: 48,
+                    maxHeight: 38,
+                  ),
+                  onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
                 ),
-                backgroundColor: Colors.transparent,
-                onPressed: () => MacosWindowScope.of(context).toggleSidebar(),
               ),
               title: const Text('macosui_counter'),
             ),
@@ -87,7 +95,7 @@ class _MacosCounterState extends State<MacosCounter> {
                 builder: (context, scrollController) {
                   return IndexedStack(
                     index: currentIndex,
-                    children: [
+                    children: const [
                       _Incrementer(),
                       _Decrementer(),
                     ],
@@ -103,7 +111,7 @@ class _MacosCounterState extends State<MacosCounter> {
 }
 
 class _Incrementer extends StatelessWidget {
-  const _Incrementer({Key? key}) : super(key: key);
+  const _Incrementer();
 
   @override
   Widget build(BuildContext context) {
@@ -115,13 +123,13 @@ class _Incrementer extends StatelessWidget {
             'You have pushed the button this many times:',
           ),
           const SizedBox(height: 8.0),
-          CounterOutput(),
+          const CounterOutput(),
           const SizedBox(height: 16.0),
           PushButton(
-            child: const Text('Increment'),
-            buttonSize: ButtonSize.large,
+            controlSize: ControlSize.large,
             onPressed: () =>
                 Provider.of<CounterBloc>(context, listen: false).increment(),
+            child: const Text('Increment'),
           ),
         ],
       ),
@@ -130,7 +138,7 @@ class _Incrementer extends StatelessWidget {
 }
 
 class _Decrementer extends StatelessWidget {
-  const _Decrementer({Key? key}) : super(key: key);
+  const _Decrementer();
 
   @override
   Widget build(BuildContext context) {
@@ -142,13 +150,13 @@ class _Decrementer extends StatelessWidget {
             'You have pushed the button this many times:',
           ),
           const SizedBox(height: 8.0),
-          CounterOutput(),
+          const CounterOutput(),
           const SizedBox(height: 16.0),
           PushButton(
-            child: const Text('Decrement'),
-            buttonSize: ButtonSize.large,
+            controlSize: ControlSize.large,
             onPressed: () =>
                 Provider.of<CounterBloc>(context, listen: false).decrement(),
+            child: const Text('Decrement'),
           ),
         ],
       ),

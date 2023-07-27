@@ -4,7 +4,7 @@ import 'package:macosui_counter/ui/screens/macos_counter.dart';
 
 /// A root widget appropriate for macOS/desktop
 class MacApp extends StatelessWidget {
-  const MacApp({Key? key}) : super(key: key);
+  const MacApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class MacApp extends StatelessWidget {
       theme: MacosThemeData.light(),
       darkTheme: MacosThemeData.dark(),
       themeMode: ThemeMode.system,
-      home: MacosCounter(),
+      home: const MacosCounter(),
     );
   }
 }

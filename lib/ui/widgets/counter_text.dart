@@ -5,9 +5,9 @@ import 'package:universal_platform/universal_platform.dart';
 
 class CounterText extends StatelessWidget {
   const CounterText({
-    Key? key,
+    super.key,
     required this.count,
-  }) : super(key: key);
+  });
 
   final int count;
 
@@ -27,7 +27,7 @@ class CounterText extends StatelessWidget {
     } else {
       return Text(
         '$count',
-        style: Theme.of(context).textTheme.headline4,
+        style: Theme.of(context).textTheme.headlineMedium,
       );
     }
   }

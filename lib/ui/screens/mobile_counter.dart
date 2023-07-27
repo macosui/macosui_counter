@@ -4,6 +4,8 @@ import 'package:macosui_counter/ui/widgets/info_text.dart';
 import 'package:macosui_counter/ui/widgets/mobile_counter_buttons.dart';
 
 class MobileCounter extends StatelessWidget {
+  const MobileCounter({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,10 +13,10 @@ class MobileCounter extends StatelessWidget {
         title: const Text('Counter'),
         actions: [
           IconButton(
-            icon: Icon(Icons.info_outline),
+            icon: const Icon(Icons.info_outline),
             onPressed: () => showDialog(
               context: context,
-              builder: (_) => _MobileInfoDialog(),
+              builder: (_) => const _MobileInfoDialog(),
             ),
           ),
         ],
@@ -26,35 +28,35 @@ class MobileCounter extends StatelessWidget {
             Text(
               'You have pushed the button this many times:',
               textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(height: 8),
-            CounterOutput(),
+            const CounterOutput(),
           ],
         ),
       ),
-      floatingActionButton: MobileCounterButtons(),
+      floatingActionButton: const MobileCounterButtons(),
     );
   }
 }
 
 class _MobileInfoDialog extends StatelessWidget {
-  const _MobileInfoDialog({Key? key}) : super(key: key);
+  const _MobileInfoDialog();
 
   @override
   Widget build(BuildContext context) {
     return SimpleDialog(
-      title: Text('Info'),
+      title: const Text('Info'),
       children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
-          child: const InfoText(),
+        const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          child: InfoText(),
         ),
         ButtonBar(
           children: [
             TextButton(
               style: TextButton.styleFrom(
-                primary: Theme.of(context).colorScheme.secondary,
+                foregroundColor: Theme.of(context).colorScheme.secondary,
               ),
               child: const Text('DISMISS'),
               onPressed: () => Navigator.of(context).pop(),

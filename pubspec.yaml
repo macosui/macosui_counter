@@ -1,23 +1,24 @@
 name: macosui_counter
 description: A cross-platform counter app made to demonstrate the macos_ui package.
 publish_to: 'none'
-version: 1.0.0+2
+version: 2.0.0+3
 
 environment:
-  sdk: ">=2.15.0 <3.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.4
-  provider: ^6.0.2
-  macos_ui: ^1.1.0
-  rxdart: ^0.27.3
+  cupertino_icons: ^1.0.5
+  provider: ^6.0.5
+  macos_ui: ^2.0.0
+  rxdart: ^0.27.7
   universal_platform: ^1.0.0+1
-  fluent_ui: ^3.11.1
+  fluent_ui: ^4.7.0
 
 dev_dependencies:
+  flutter_lints: ^2.0.2
   flutter_test:
     sdk: flutter
 

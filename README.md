@@ -12,13 +12,9 @@ A cross-platform counter app made to demonstrate the macos_ui package and buildi
 
 ## Screenshots
 
-<img src="https://imgur.com/RhInhlU.jpg" width="75%"/>
+<img src="https://imgur.com/4ILtlZr.jpg" width="75%"/>
 
-<img src="https://imgur.com/uKU6PV8.jpg" width="75%"/>
-
-<img src="https://imgur.com/NKknAoR.jpg" width="75%"/>
-
-<img src="https://imgur.com/GuJgp4K.jpg" width="75%"/>
+<img src="https://imgur.com/KeRqP9x.jpg" width="75%"/>
 
 <img src="https://imgur.com/QKINyRT.jpg" width="25%"/>
 

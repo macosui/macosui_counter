@@ -14,7 +14,7 @@ void main() {
 
   testWidgets('test counter output widget', (WidgetTester tester) async {
     await tester.pumpWidget(
-        _makeWidgetTestableWithProvider<CounterBloc>(bloc, CounterOutput(),),);
+        _makeWidgetTestableWithProvider<CounterBloc>(bloc, const CounterOutput(),),);
 
     expect(find.byType(CounterText), findsOneWidget);
   });
@@ -22,7 +22,7 @@ void main() {
   testWidgets('test counter output widget with value',
       (WidgetTester tester) async {
     await tester.pumpWidget(
-        _makeWidgetTestableWithProvider<CounterBloc>(bloc, CounterOutput(),),);
+        _makeWidgetTestableWithProvider<CounterBloc>(bloc, const CounterOutput(),),);
 
     expect(find.text('0'), findsOneWidget);
 
@@ -36,7 +36,7 @@ void main() {
     await tester.pumpWidget(
       _makeWidgetTestableWithProvider<CounterBloc>(
         bloc,
-        CounterOutput(),
+        const CounterOutput(),
       ),
     );
 
@@ -56,7 +56,7 @@ void main() {
         await tester.pumpWidget(
           _makeWidgetTestableWithProvider<CounterBloc>(
             bloc,
-            CounterOutput(),
+            const CounterOutput(),
           ),
         );
 

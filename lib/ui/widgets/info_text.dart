@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 class InfoText extends StatelessWidget {
-  const InfoText({Key? key}) : super(key: key);
+  const InfoText({super.key});
 
   @override
   Widget build(BuildContext context) {

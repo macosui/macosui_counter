@@ -10,7 +10,7 @@ void main() {
       providers: [
         Provider<CounterBloc>.value(value: counterBloc),
       ],
-      child: MobileApp(),
+      child: const MobileApp(),
     ),
   );
 }
